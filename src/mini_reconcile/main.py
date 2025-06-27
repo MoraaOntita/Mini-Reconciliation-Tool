@@ -21,7 +21,6 @@ This makes it easy to test and validate the reconciliation logic outside the UI.
 import argparse
 from src.mini_reconcile.core.reconciler import Reconciler
 from src.mini_reconcile.core.reader import load_csv
-from src import logger
 
 
 def main():

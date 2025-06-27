@@ -33,3 +33,4 @@ def load_csv(path: str, label: str) -> DataFrame:
     except pd.errors.ParserError as e:
         logger.error(f"{label} CSV parse failed: {e}")
         raise ValueError(f"{label} CSV parse failed: {path}") from e
+    
