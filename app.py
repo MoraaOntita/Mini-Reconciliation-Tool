@@ -116,11 +116,6 @@ with st.form("run_form"):
                     "reconciliation."
                 )
                 st.exception(e)
-        else:
-            st.warning(
-                "⚠️ Please fix the file issues above before running "
-                "reconciliation."
-            )
 
 
 # === Show results ===
