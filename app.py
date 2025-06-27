@@ -112,7 +112,8 @@ with st.form("run_form"):
                 st.session_state.results = results
             except Exception as e:
                 st.error(
-                    "🚫 Oops, something went wrong during reconciliation."
+                    "🚫 Oops, something went wrong during "
+                    "reconciliation."
                 )
                 st.exception(e)
         else:
