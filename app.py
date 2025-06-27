@@ -28,9 +28,7 @@ from src.mini_reconcile.core.reconciler import Reconciler
 
 st.set_page_config(page_title="Mini Reconciliation Tool", layout="wide")
 st.title("📊 Mini Reconciliation Tool")
-
 REQUIRED_COLUMNS = ["transaction_reference", "amount", "status"]
-
 st.markdown(
     "ℹ️ **How it works**\n\n"
     "- Upload **two CSV files**:\n\n"
