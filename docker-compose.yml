@@ -1,0 +1,8 @@
+services:
+  reconcile-streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Or Dockerfile.streamlit if you renamed it
+    container_name: reconcile_streamlit
+    ports:
+      - "8501:8501"
