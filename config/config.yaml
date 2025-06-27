@@ -1,0 +1,48 @@
+# ------------------------------------------------------------------------------
+# Configuration File for Mini Reconciliation Tool
+#
+# This YAML file defines the core settings used throughout the reconciliation
+# workflow, including:
+#
+# - The key column to merge internal and provider transaction data.
+# - Suffixes applied to distinguish columns after merging.
+# - Pandas merge indicator settings to identify matching and unmatched records.
+# - Field pairs to compare for mismatches (e.g., amount, status).
+# - Human-friendly column renaming for clearer output.
+# - Final output labels for categorized results.
+#
+# The application reads this file at runtime to ensure all merge, compare,
+# and reporting operations are configurable without modifying the code.
+# ------------------------------------------------------------------------------
+
+
+merge_key: transaction_reference
+merge_suffixes: ["_internal", "_provider"]
+
+# merge indicator column name:
+merge_indicator: _merge
+
+# The merge status labels explicit — still defaults to pandas behavior:
+merge_status:
+  both: both
+  left_only: left_only
+  right_only: right_only
+
+comparison_pairs:
+  - base: amount
+    suffixes: ["_internal", "_provider"]
+  - base: status
+    suffixes: ["_internal", "_provider"]
+
+rename_columns:
+  amount_internal: Internal Amount
+  amount_provider: Provider Amount
+  status_internal: Internal Status
+  status_provider: Provider Status
+
+# The output labels:
+result_labels:
+  matched: Matched
+  only_internal: Only in Internal
+  only_provider: Only in Provider
+  mismatched: Mismatched
