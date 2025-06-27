@@ -102,7 +102,10 @@ if provider_file:
 with st.form("run_form"):
     submitted = st.form_submit_button("Run Reconciliation")
     if submitted:
-        if st.session_state.df_internal is not None and st.session_state.df_provider is not None:
+        if (
+            st.session_state.df_internal is not None
+            and st.session_state.df_provider is not None
+        ):
             reconciler = Reconciler()
             try:
                 results = reconciler.reconcile(
